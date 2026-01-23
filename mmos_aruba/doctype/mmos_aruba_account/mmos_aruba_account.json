@@ -1,0 +1,52 @@
+{
+  "doctype": "DocType",
+  "name": "MMOS Aruba Account",
+  "module": "MMOS Aruba",
+  "custom": 0,
+  "autoname": "field:account_name",
+  "fields": [
+    {
+      "fieldname": "account_name",
+      "fieldtype": "Data",
+      "label": "Account Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "api_key",
+      "fieldtype": "Password",
+      "label": "API Key"
+    },
+    {
+      "fieldname": "endpoint",
+      "fieldtype": "Data",
+      "label": "Endpoint",
+      "description": "URL base per le API Aruba (es. https://api.aruba.it)"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nActive\nDisabled",
+      "default": "Draft"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 0,
+      "cancel": 0,
+      "amend": 0,
+      "permlevel": 0
+    }
+  ],
+  "track_changes": 0
+}

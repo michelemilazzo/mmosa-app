@@ -1,0 +1,73 @@
+{
+  "doctype": "DocType",
+  "name": "MMOS Aruba Node",
+  "module": "MMOS Aruba",
+  "custom": 0,
+  "autoname": "field:node_id",
+  "fields": [
+    {
+      "fieldname": "node_id",
+      "fieldtype": "Data",
+      "label": "Node ID",
+      "reqd": 1
+    },
+    {
+      "fieldname": "account",
+      "fieldtype": "Link",
+      "label": "Aruba Account",
+      "options": "MMOS Aruba Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "service_id",
+      "fieldtype": "Data",
+      "label": "Service ID"
+    },
+    {
+      "fieldname": "public_ip",
+      "fieldtype": "Data",
+      "label": "Public IP"
+    },
+    {
+      "fieldname": "role",
+      "fieldtype": "Select",
+      "label": "Role",
+      "options": "Gateway\nStorage\nWireGuard\nOther",
+      "default": "Other"
+    },
+    {
+      "fieldname": "state",
+      "fieldtype": "Select",
+      "label": "State",
+      "options": "Provisioning\nActive\nPaused\nDecommissioned",
+      "default": "Provisioning"
+    },
+    {
+      "fieldname": "last_sync",
+      "fieldtype": "Datetime",
+      "label": "Last Sync"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 0,
+      "cancel": 0,
+      "amend": 0,
+      "permlevel": 0
+    }
+  ],
+  "track_changes": 1,
+  "search_fields": "node_id,public_ip",
+  "sort_field": "last_sync",
+  "sort_order": "DESC"
+}
