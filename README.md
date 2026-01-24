@@ -21,6 +21,10 @@ bench --site dev.onekeyco.com migrate
 1. Apri `MMOS Aruba Setup` (single DocType) e inserisci i valori base: account, API key, endpoint, ruolo predefinito e cron schedule del job di sincronizzazione.
 2. Usa il pannello per tenere traccia delle credenziali ufficiali prima di creare nodi o job automatici.
 
+## Dashboard rapida
+- Dal Desk, apri il modulo "MMOS Aruba" e clicca su **Setup Panel** oppure visita `desk#mmos-aruba-setup`.
+- Il pannello mostra in tempo reale account, endpoint, ruolo e cron predefiniti in card dedicate.
+
 ## Uso operativo
 1. Inserisci gli account Aruba (API key + endpoint). Proteggi le credenziali con permessi `System Manager`.
 2. Registra i servizi (VPS, load balancer) collegandoli all'account e definendo `role` (`gateway`, `storage`, `wireguard`) e `state`.
