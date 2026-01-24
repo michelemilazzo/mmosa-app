@@ -5,6 +5,7 @@
 ## Caratteristiche
 - `MMOS Aruba Account`: memo delle credenziali Aruba (API key, endpoint, stato, note).
 - `MMOS Aruba Node`: rappresenta un VPS/servizio Aruba, con IP pubblico, ruolo operativo, timestamp di sincronizzazione e link all'account.
+- `MMOS Aruba Setup`: DocType single che funge da pannello di configurazione per le API key, il ruolo predefinito e la schedule di sincronizzazione.
 - API whitelisted per ottenere riepiloghi e aggiornare lo stato dei nodi da automation.
 - `after_install` crea un account di placeholder per evitare installazioni vuote.
 
@@ -15,6 +16,10 @@ bench get-app ./apps/mmos_aruba
 bench --site dev.onekeyco.com install-app mmos_aruba
 bench --site dev.onekeyco.com migrate
 ```
+
+## Pannello di setup
+1. Apri `MMOS Aruba Setup` (single DocType) e inserisci i valori base: account, API key, endpoint, ruolo predefinito e cron schedule del job di sincronizzazione.
+2. Usa il pannello per tenere traccia delle credenziali ufficiali prima di creare nodi o job automatici.
 
 ## Uso operativo
 1. Inserisci gli account Aruba (API key + endpoint). Proteggi le credenziali con permessi `System Manager`.

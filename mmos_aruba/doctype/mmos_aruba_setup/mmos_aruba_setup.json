@@ -1,0 +1,61 @@
+{
+  "doctype": "DocType",
+  "name": "MMOS Aruba Setup",
+  "module": "MMOS Aruba",
+  "custom": 0,
+  "issingle": 1,
+  "fields": [
+    {
+      "fieldname": "account_name",
+      "fieldtype": "Data",
+      "label": "Default Account",
+      "description": "Nome dell'account Aruba preferito.",
+      "reqd": 1
+    },
+    {
+      "fieldname": "api_key",
+      "fieldtype": "Password",
+      "label": "API Key",
+      "description": "Chiave API Aruba usata dai job di sincronizzazione."
+    },
+    {
+      "fieldname": "endpoint",
+      "fieldtype": "Data",
+      "label": "Endpoint API",
+      "default": "https://api.aruba.it",
+      "description": "URL base per le chiamate Aruba."
+    },
+    {
+      "fieldname": "default_role",
+      "fieldtype": "Select",
+      "label": "Role assegnato",
+      "options": "Gateway\nStorage\nWireGuard\nOther",
+      "default": "Gateway",
+      "description": "Ruolo predefinito per i nodi importati automaticamente."
+    },
+    {
+      "fieldname": "sync_cron",
+      "fieldtype": "Data",
+      "label": "Schedule di sincronizzazione",
+      "description": "Cron expression (es. 0 */4 * * *)."
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 0,
+      "delete": 0,
+      "submit": 0,
+      "cancel": 0,
+      "amend": 0,
+      "permlevel": 0
+    }
+  ]
+}
