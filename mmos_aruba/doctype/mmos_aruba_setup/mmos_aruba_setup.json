@@ -40,6 +40,13 @@
       "description": "Cron expression (es. 0 */4 * * *)."
     },
     {
+      "fieldname": "last_sync",
+      "fieldtype": "Datetime",
+      "label": "Ultimo trigger",
+      "read_only": 1,
+      "description": "Stampato dalla dashboard ogni volta che premi <Trigger sync now>."
+    },
+    {
       "fieldname": "notes",
       "fieldtype": "Small Text",
       "label": "Notes"

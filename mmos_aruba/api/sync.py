@@ -1,4 +1,5 @@
 import frappe
+from frappe.utils import data
 
 
 @frappe.whitelist()
@@ -21,3 +22,12 @@ def update_node_status(node: str, state: str) -> None:
     if not frappe.db.exists("MMOS Aruba Node", node):
         frappe.throw(f"Nodo Aruba '{node}' non trovato")
     frappe.db.set_value("MMOS Aruba Node", node, "state", state)
+
+
+@frappe.whitelist()
+def trigger_sync() -> dict[str, str]:
+    doc = frappe.get_single("MMOS Aruba Setup")
+    doc.last_sync = data.now_datetime()
+    doc.save(ignore_permissions=True)
+    frappe.msgprint("Sync trigger registrato.")
+    return {"last_sync": doc.last_sync}

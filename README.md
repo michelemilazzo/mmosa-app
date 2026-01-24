@@ -24,6 +24,7 @@ bench --site dev.onekeyco.com migrate
 ## Dashboard rapida
 - Dal Desk, apri il modulo "MMOS Aruba" e clicca su **Setup Panel** oppure visita `desk#mmos-aruba-setup`.
 - Il pannello mostra in tempo reale account, endpoint, ruolo e cron predefiniti in card dedicate.
+- Clicca su **Trigger sync now** per aggiornare istantaneamente il campo `Ultimo trigger` e registrare quando è stato lanciato un job di sincronizzazione.
 
 ## Uso operativo
 1. Inserisci gli account Aruba (API key + endpoint). Proteggi le credenziali con permessi `System Manager`.

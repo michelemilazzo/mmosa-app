@@ -7,3 +7,7 @@
 .mmos-setup-panel .frappe-card {
     background: var(--bg-primary);
 }
+.setup-panel-actions {
+    margin-top: 1.5rem;
+    text-align: right;
+}

@@ -33,6 +33,7 @@ frappe.pages['mmos-aruba-setup'] = {
             ['Endpoint API', doc.endpoint || '-'],
             ['Ruolo predefinito', doc.default_role || '-'],
             ['Sincronizzazione', doc.sync_cron || '-'],
+            ['Ultimo trigger', doc.last_sync || '-'],
             ['Note', doc.notes || '-'],
         ];
 
@@ -51,6 +52,23 @@ frappe.pages['mmos-aruba-setup'] = {
             <div class="setup-panel-grid">
                 ${cards}
             </div>
+            <div class="setup-panel-actions">
+                <button class="btn btn-primary btn-sm" id="trigger-sync">Trigger sync now</button>
+            </div>
         `);
+
+        this.body.find('#trigger-sync').on('click', () => {
+            const button = $(this.body).find('#trigger-sync');
+            button.prop('disabled', true).text('Avvio in corso...');
+            frappe.call({
+                method: 'mmos_aruba.api.sync.trigger_sync',
+            }).then(() => {
+                button.prop('disabled', false).text('Trigger sync now');
+                frappe.show_alert('Trigger registrato');
+                this.refresh();
+            }).catch(() => {
+                button.prop('disabled', false).text('Trigger sync now');
+            });
+        });
     },
 };
