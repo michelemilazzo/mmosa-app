@@ -13,3 +13,4 @@ whitelisted_methods = [
     "mmos_aruba.api.sync.get_nodes_summary",
     "mmos_aruba.api.sync.update_node_status",
 ]
+frappe_version = ">=15.0.0,<17.0.0"
